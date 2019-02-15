@@ -9,3 +9,5 @@ script('build')
 script('clean').execute(() => {
   removeDir('.rpt2_cache/')
 })
+
+script('publish').run('git push origin master', 'npm publish')

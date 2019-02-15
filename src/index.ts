@@ -29,9 +29,7 @@ const main = () => {
       try {
         vm.runInContext(file, context)
       } catch (err) {
-        console.error(
-          `Error with the \`rs.js\` file: \`${JSON.stringify(err)}\`.`
-        )
+        console.error(`Error with the \`rs.js\` file: \`${err}\`.`)
         process.exit(1)
       }
       if (args.length === 0) {
