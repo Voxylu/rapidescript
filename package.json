@@ -1,6 +1,6 @@
 {
   "name": "rapidescript",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A fast, 0 depencies, cli to quicly creates scripts. A replacement of npm scripts.",
   "main": "bin/index.js",
   "scripts": {

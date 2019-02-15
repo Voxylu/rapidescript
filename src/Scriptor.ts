@@ -18,8 +18,7 @@ const generateScriptsActions: (registerFn: RegisterFn) => ScriptActions = (
   registerFn
 ) => ({
   run: (...cmds) => {
-    const commands = cmds.flat(Infinity)
-    registerFn('run', commands)
+    registerFn('run', cmds)
     return generateScriptsActions(registerFn)
   },
   execute: (fn) => {

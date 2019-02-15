@@ -36,7 +36,6 @@ To start a script just use the `rs` command by doing `rs <name of the script>`
  * run() take one or more commands and execute them
  */
 run('ls').run('cat package.json')
-run(['ls', 'cat package.json'])
 run('ls', 'cat package.json')
 // In each case `ls` will be executed then `cat package.json`
 ```
