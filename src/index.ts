@@ -3,7 +3,6 @@ import * as path from 'path'
 import * as vm from 'vm'
 import { Scriptor } from './Scriptor'
 import { baseContext } from './context'
-import * as os from 'os'
 import { execSync } from 'child_process'
 
 const main = () => {
@@ -42,12 +41,10 @@ const main = () => {
           process.exit(1)
         }
       } else {
-        const ext = os.platform() === 'win32' ? '.cmd' : ''
         const cmdPath = path.resolve(
           process.cwd(),
           'node_modules/.bin/',
-          args[0],
-          ext
+          args[0]
         )
         if (fs.existsSync(cmdPath)) {
           const commandToEx = `${cmdPath} ${args[0]

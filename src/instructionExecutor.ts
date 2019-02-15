@@ -1,6 +1,5 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import * as os from 'os'
 import { execSync } from 'child_process'
 import { Instruction } from './Scriptor'
 
@@ -9,12 +8,10 @@ export const runCommand = (
   addtionalArgs: string[] = [],
   stdio: boolean = false
 ) => {
-  const ext = os.platform() === 'win32' ? '.cmd' : ''
   const cmdPath = path.resolve(
     process.cwd(),
     'node_modules/.bin/',
-    command.split(' ')[0],
-    ext
+    command.split(' ')[0]
   )
   if (fs.existsSync(cmdPath)) {
     const commandToEx = `${cmdPath} ${command
