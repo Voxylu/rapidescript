@@ -1,0 +1,40 @@
+{
+  "name": "rapidescript",
+  "version": "1.0.0",
+  "description": "A fast, 0 depencies, cli to quicly creates scripts. A replacement of npm scripts.",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Voxylu/rapidescript.git"
+  },
+  "keywords": [
+    "fast",
+    "scripts",
+    "npm-run",
+    "yarn",
+    "automatisation",
+    "make",
+    "rapide",
+    "cli"
+  ],
+  "author": "Voxylu <hello@voxylu.xyz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Voxylu/rapidescript/issues"
+  },
+  "homepage": "https://github.com/Voxylu/rapidescript#readme",
+  "bin": {
+    "rs": "bin/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^11.9.4",
+    "rollup": "^1.1.2",
+    "rollup-plugin-typescript2": "^0.19.2",
+    "rollup-plugin-uglify": "^6.0.2",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  }
+}
