@@ -13,24 +13,27 @@ export const runCommand = (
     'node_modules/.bin/',
     command.split(' ')[0]
   )
+  let commandToEx = ''
   if (fs.existsSync(cmdPath)) {
-    const commandToEx = `${cmdPath} ${command
+    commandToEx = `${cmdPath} ${command
       .split(' ')
       .slice(1)
       .concat(addtionalArgs)
       .join(' ')}`.trim()
-    if (stdio) {
-      return execSync(commandToEx, { stdio: 'inherit' })
-    } else {
-      return execSync(commandToEx).toString()
-    }
   } else {
-    const commandToEx = `${command} ${addtionalArgs.join(' ')}`.trim()
-    if (stdio) {
-      return execSync(commandToEx, { stdio: 'inherit' })
-    } else {
-      return execSync(commandToEx).toString()
-    }
+    commandToEx = `${command} ${addtionalArgs.join(' ')}`.trim()
+  }
+  const env = {
+    ...process.env,
+    PATH: `${process.env.PATH}:${path.resolve(
+      process.cwd(),
+      'node_modules/.bin/'
+    )}`,
+  }
+  if (stdio) {
+    return execSync(commandToEx, { stdio: 'inherit', env })
+  } else {
+    return execSync(commandToEx, { env }).toString()
   }
 }
 

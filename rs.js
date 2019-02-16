@@ -11,3 +11,5 @@ script('clean').execute(() => {
 })
 
 script('publish').run('git push origin master', 'npm publish')
+
+script('test').run('echo "lol" | lolcat')
